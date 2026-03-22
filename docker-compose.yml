@@ -1,0 +1,11 @@
+version: '2.3'
+
+services:
+  serving-api:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "8500:8500"
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility,video
